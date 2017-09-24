@@ -21,10 +21,10 @@
 #include "keymap_swedish.h"
 
 #define BASE 0 // default layer
-#define SYMBOLS 1 // symbols
-#define ARROWS 2 // Arrow keys
-#define MOUSE 3 // Mouse keys
-#define NUMBERS 4 // Number Pad keys
+#define SYMB 1 // symbols
+#define ARRO 2 // Arrow keys
+#define MOUS 3 // Mouse keys
+#define NUMB 4 // Number Pad keys
 
 enum custom_keycodes {
   PLACEHOLDER = SAFE_RANGE, // can always be here
@@ -49,35 +49,38 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  *   |  L3  |      |      |  L5  | LGUI |                                       | RGUI | Left | Right| Down |  L2  |
  *   |      |      |      |      |      |                                       |      |      |      |      |      |
  *   `----------------------------------'                                       `----------------------------------'
- *                                        ,-------------.       ,---------------.
- *                                        | LALT |      |       |      |  RALT  |
- *                                 ,------|------|------|       |------+--------+------.
- *                                 |      |      |      |       |      |        |      |
- *                                 | Space|Back- |------|       |------|  Tab   |Enter |
- *                                 |      |space |      |       |      |        |      |
- *                                 `--------------------'       `----------------------'
+ *                                        ,-------------.       ,-------------.
+ *                                        | LALT |      |       |      | RALT |
+ *                                        |      |      |       |      |      |
+ *                                 ,------|------|------|       |------+------+------.
+ *                                 |      |      |      |       |      |      |      |
+ *                                 |      |      |      |       |      |      |      |
+ *                                 | Space|Back- |------|       |------| Tab  |Enter |
+ *                                 |      |space |      |       |      |      |      |
+ *                                 |      |      |      |       |      |      |      |
+ *                                 `--------------------'       `--------------------'
  */
 // If it accepts an argument (i.e, is a function), it doesn't need KC_.
 // Otherwise, it needs KC_*
 [BASE] = LAYOUT_ergodox(  // layer 0 : default
     // left hand
-    KC_NO,            KC_1,           KC_2,          KC_3,        KC_4,       KC_5,             KC_ESC,
-    KC_NO,            KC_Q,           KC_W,          KC_E,        KC_R,       KC_T,             KC_NO,
-    KC_LCTRL,         LT(MOUSE, KC_A),KC_S,          KC_D,        KC_F,       KC_G,
-    KC_LSFT,          KC_Z,           KC_X,          KC_C,        KC_V,       LT(MOUSE, KC_B),  TG(MOUSE),
-    MO(MOUSE),        KC_NO,          KC_NO,         MO(NUMBERS),  KC_LGUI,
-                                                                                  KC_LALT,KC_NO,
-                                                                                          KC_NO,
-                                                                 LT(SYMBOLS, KC_SPC),KC_BSPC,KC_NO,
+    KC_NO,            KC_1,             KC_2,             KC_3,             KC_4,             KC_5,             KC_ESC,
+    KC_NO,            KC_Q,             KC_W,             KC_E,             KC_R,             KC_T,             KC_NO,
+    KC_LCTRL,         LT(MOUS, KC_A),   KC_S,             KC_D,             KC_F,             KC_G,
+    KC_LSFT,          KC_Z,             KC_X,             KC_C,             KC_V,             LT(MOUS, KC_B),   TG(MOUS),
+    MO(MOUS),         KC_NO,            KC_NO,            MO(NUMB),         KC_LGUI,
+                                                                                                          KC_LALT, KC_NO,
+                                                                                                                   KC_NO,
+                                                                                        LT(SYMB, KC_SPC), KC_BSPC, KC_NO,
     // right hand
-    KC_NO,            KC_6,           KC_7,          KC_8,        KC_9,       KC_0,             KC_NO,
-    KC_NO,            KC_Y,           KC_U,          KC_I,        KC_O,       KC_P,             KC_NO,
-                      KC_H,           KC_J,          KC_K,        KC_L,       LT(ARROWS, NO_MINS), KC_RCTRL,
-    TG(ARROWS),       LT(ARROWS,KC_N),KC_M,          KC_COMM,     KC_DOT,     KC_UP,            KC_RSFT,
-                                      KC_UP,         KC_LEFT,     KC_RIGHT,   KC_DOWN,          MO(ARROWS),
+    KC_NO,            KC_6,             KC_7,             KC_8,             KC_9,             KC_0,             KC_NO,
+    KC_NO,            KC_Y,             KC_U,             KC_I,             KC_O,             KC_P,             KC_NO,
+                      KC_H,             KC_J,             KC_K,             KC_L,             LT(ARRO, NO_MINS),KC_RCTRL,
+    TG(ARRO),         LT(ARRO,KC_N),    KC_M,             KC_COMM,          KC_DOT,           KC_UP,            KC_RSFT,
+                                        KC_UP,            KC_LEFT,          KC_RIGHT,         KC_DOWN,          MO(ARRO),
     KC_NO, KC_RALT,
     KC_PGUP,
-    KC_PGDN,KC_TAB, LT(SYMBOLS, KC_ENT)
+    KC_PGDN, KC_TAB, LT(SYMB, KC_ENT)
 ),
 
 /* Keymap 1: Symbol Layer
@@ -104,14 +107,14 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 // SYMBOLS
 [SYMBOLS] = LAYOUT_ergodox(
     // left hand
-    KC_TRNS,    NO_CIRC,    NO_TILD,    KC_HASH,    NO_DLR_MAC,   KC_PERC,    KC_TRNS,
-    KC_TRNS,    KC_EXLM,    NO_AT_MAC,  NO_LCBR_MAC,NO_RCBR_MAC,  NO_PLUS,    KC_TRNS,
-    KC_TRNS,    NO_AMPR,    NO_SLSH,    NO_LPRN,    NO_RPRN,      NO_EQL,
-    KC_TRNS,    NO_PIPE_MAC,NO_BSLS_MAC,NO_LBRC,    NO_RBRC,      NO_MINS,    KC_TRNS,
-    KC_TRNS,       KC_TRNS,    KC_TRNS,    KC_TRNS,    NO_ASTR,
-                                                                       KC_TRNS,KC_TRNS,
-                                                                               KC_TRNS,
-                                                               KC_TRNS,KC_TRNS,KC_TRNS,
+    KC_TRNS,          NO_CIRC,          NO_TILD,          KC_HASH,          NO_DLR_MAC,       KC_PERC,          KC_TRNS,
+    KC_TRNS,          KC_EXLM,          NO_AT_MAC,        NO_LCBR_MAC,      NO_RCBR_MAC,      NO_PLUS,          KC_TRNS,
+    KC_TRNS,          NO_AMPR,          NO_SLSH,          NO_LPRN,          NO_RPRN,          NO_EQL,
+    KC_TRNS,          NO_PIPE_MAC,      NO_BSLS_MAC,      NO_LBRC,          NO_RBRC,          NO_MINS,          KC_TRNS,
+    KC_TRNS,          KC_TRNS,          KC_TRNS,          KC_TRNS,          NO_ASTR,
+                                                                                                       KC_TRNS, KC_TRNS,
+                                                                                                                KC_TRNS,
+                                                                                              KC_TRNS, KC_TRNS, KC_TRNS,
     // right hand
     KC_TRNS,    KC_TRNS,    NO_QUO2,    NO_APOS_MAC,KC_TRNS,      KC_TRNS,    KC_TRNS,
     KC_TRNS,    KC_EXLM,    NO_LESS_MAC,NO_GRTR_MAC,KC_TRNS,      NO_AA,      KC_TRNS,
@@ -236,7 +239,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  */
 // If it accepts an argument (i.e, is a function), it doesn't need KC_.
 // Otherwise, it needs KC_*
-[NUMBERS] = LAYOUT_ergodox(  // layer 0 : default
+[NUMB] = LAYOUT_ergodox(  // layer 0 : default
     // left hand
     NO_HALF,          KC_1,           KC_2,          KC_3,    KC_4,    KC_5,   KC_LEFT,
     KC_DELT,          KC_Q,           KC_W,          KC_E,    KC_R,    KC_T,   TG(SYMBOLS),

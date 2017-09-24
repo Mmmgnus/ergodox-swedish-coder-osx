@@ -5,6 +5,7 @@ DEBUG_ENABLE = no
 CONSOLE_ENABLE = no
 TAP_DANCE_ENABLE = yes
 MOUSEKEY_ENABLE = yes
+FORCE_NKRO = yes
 
 ifndef QUANTUM_DIR
 	include ../../../../Makefile
