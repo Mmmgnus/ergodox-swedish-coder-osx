@@ -77,7 +77,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_NO,            KC_Y,             KC_U,             KC_I,             KC_O,             KC_P,             KC_NO,
                       KC_H,             KC_J,             KC_K,             KC_L,             LT(ARRO, NO_MINS),KC_RCTRL,
     TG(ARRO),         LT(ARRO,KC_N),    KC_M,             KC_COMM,          KC_DOT,           KC_UP,            KC_RSFT,
-                                        KC_UP,            KC_LEFT,          KC_RIGHT,         KC_DOWN,          MO(ARRO),
+                                        KC_RGUI,          KC_LEFT,          KC_RIGHT,         KC_DOWN,          MO(ARRO),
     KC_NO, KC_RALT,
     KC_PGUP,
     KC_PGDN, KC_TAB, LT(SYMB, KC_ENT)
@@ -108,7 +108,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 [SYMB] = LAYOUT_ergodox(
     // left hand
     KC_TRNS,          NO_CIRC,          NO_TILD,          KC_HASH,          LALT(KC_4),       KC_PERC,          KC_TRNS,
-    KC_TRNS,          KC_EXLM,          NO_AT_MAC,        NO_LCBR_MAC,      NO_RCBR_MAC,      NO_PLUS,          KC_TRNS,
+    KC_TRNS,          KC_EXLM,          LALT(KC_2),       NO_LCBR_MAC,      NO_RCBR_MAC,      NO_PLUS,          KC_TRNS,
     KC_TRNS,          NO_AMPR,          NO_SLSH,          NO_LPRN,          NO_RPRN,          NO_EQL,
     KC_TRNS,          NO_PIPE_MAC,      NO_BSLS_MAC,      NO_LBRC,          NO_RBRC,          NO_MINS,          KC_TRNS,
     KC_TRNS,          KC_TRNS,          KC_TRNS,          KC_TRNS,          NO_ASTR,
@@ -119,7 +119,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_TRNS,    KC_TRNS,    NO_QUO2,    NO_AT_MAC,  KC_TRNS,      KC_TRNS,    KC_TRNS,
     KC_TRNS,    KC_EXLM,    NO_LESS_MAC,NO_GRTR_MAC,KC_TRNS,      NO_AA,      KC_TRNS,
                 NO_QUES,    KC_COMMA,   KC_DOT,     NO_OSLH,      NO_AE,      KC_TRNS,
-    KC_TRNS,    NO_UNDS,    NO_COLN,    NO_SCLN,    KC_TRNS,      KC_TRNS,    KC_TRNS,
+    KC_TRNS,    NO_UNDS,    NO_SCLN,    NO_COLN,    KC_TRNS,      KC_TRNS,    KC_TRNS,
                             KC_PIPE,    NO_APOS,    KC_INT1,      KC_INT2,    KC_INT3,
     KC_TRNS, KC_TRNS,
     KC_TRNS,
