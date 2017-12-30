@@ -13,14 +13,14 @@ Ergodox keymap for swedish layout for Mac OS X and with a heavy focus on coding.
 
 ## The idea behind the layout
 
-## Layer 1: Characters
+### Layer 1: Characters
 This layer contains usefull characters like `!"'<{([.` and åäö.
 
-## Layer 2: Keyboard navigation
+### Layer 2: Keyboard navigation
 This layer have the arrow keys and some other keys/macros usefull for when you whant to navigate text/code.
 
-## Layer 3: Mouse navigation
+### Layer 3: Mouse navigation
 This layer handle all the mouse behaviours.
 
-## Layer 4: Numbers
+### Layer 4: Numbers
 This layer contains a numpad.
