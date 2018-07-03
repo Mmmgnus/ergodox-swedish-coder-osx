@@ -61,11 +61,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  *                                 `--------------------'       `--------------------'
  */
 // If it accepts an argument (i.e, is a function), it doesn't need KC_.
-// Otherwise, it needs KC_*
+// Otherwise, it needs
 [BASE] = LAYOUT_ergodox(  // layer 0 : default
     // left hand
-    KC_NO,            KC_1,             KC_2,             KC_3,             KC_4,             KC_5,             KC_ESC,
-    KC_NO,            KC_Q,             KC_W,             KC_E,             KC_R,             KC_T,             KC_NO,
+    RGB_VAD,            KC_1,             KC_2,             KC_3,             KC_4,             KC_5,             KC_ESC,
+    RGB_VAI,            KC_Q,             KC_W,             KC_E,             KC_R,             KC_T,             KC_NO,
     KC_LCTRL,         LT(MOUS, KC_A),   KC_S,             KC_D,             KC_F,             KC_G,
     KC_LSFT,          KC_Z,             KC_X,             KC_C,             KC_V,             LT(MOUS, KC_B),   TG(MOUS),
     MO(MOUS),         MAGIC_TOGGLE_NKRO,            KC_NO,            MO(NUMB),         KC_LGUI,
