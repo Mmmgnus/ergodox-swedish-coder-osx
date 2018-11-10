@@ -23,7 +23,7 @@ To install:
 ## The idea behind the layout
 
 ### Layer 1: Characters
-This layer contains usefull characters like `<{[` and åäö.
+This layer contains usefull characters like `<{[.` and åäö.
 
 ### Layer 2: Keyboard navigation
 This layer have the arrow keys and some other keys/macros usefull for when you whant to navigate text/code.
