@@ -40,17 +40,17 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |   TAB  |   Q  |   W  |   E  |   R  |   T  |      |           |      |   Y  |   U  |   I  |   O  |   P  | Back-  |
  * |        |      |      |      |      |      |      |           |      |      |      |      |      |      | space  |
  * |--------+------+------+------+------+------|      |           |      |------+------+------+------+------+--------|
- * |  LCTRL |   A  |   S  |   D  |   F  |   G  |------|           |------|   H  |   J  |   K  |   L  |   -  | RCTRL  |
- * |        |      |      |      |      |      |      |           |      |      |      |      |      |   _  |        |
+ * |  LCTRL |   A  |   S  |   D  |   F  |   G  |------|           |------|   H  |   J  |   K  |   L  |  *   | RCTRL  |
+ * |        |      |      |      |      |      |      |           |      |      |      |      |      |  '   |        |
  * |--------+------+------+------+------+------|  L2  |           |  L2  |------+------+------+------+------+--------|
- * | Left   |   Z  |   X  |   C  |   V  |   B  | lock |           | lock |   N  |   M  |   ;  |   :  |  UP  | RShift |
- * | Shift  |      |      |      |      |      |      |           |      |      |      |   ,  |   .  |      |        |
+ * | Left   |   Z  |   X  |   C  |   V  |   B  | lock |           | lock |   N  |   M  |   ;  |   :  |  -   | RShift |
+ * | Shift  |      |      |      |      |      |      |           |      |      |      |   ,  |   .  |  _   |        |
  * `--------+------+------+------+------+-------------'           `-------------+------+------+------+------+--------'
- *   |  L3  |      |      | LALT | LGUI |                                       | RGUI | RALT | Right| Down |  L2  |
+ *   |  L3  |      |      | LALT | LGUI |                                       | RGUI | RALT |      |      |  L2  |
  *   |      |      |      |      |      |                                       |      |      |      |      |      |
  *   `----------------------------------'                                       `----------------------------------'
  *                                        ,-------------.       ,-------------.
- *                                        | LALT |      |       |      | RALT |
+ *                                        |      | LALT |       | RALT |      |
  *                                        |      |      |       |      |      |
  *                                 ,------|------|------|       |------+------+------.
  *                                 |      |      |      |       |      |      |      |
@@ -69,16 +69,16 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_LCTRL,         KC_A,             KC_S,             KC_D,             KC_F,             KC_G,
     KC_LSFT,          KC_Z,             KC_X,             KC_C,             KC_V,             KC_B,             TG(ARRO),
     MO(ARRO),         MAGIC_TOGGLE_NKRO,                  KC_NO,            KC_LALT,          KC_LGUI,
-                                                                                                          KC_NO, KC_NO,
+                                                                                                          KC_LALT, KC_NO,
                                                                                                                    KC_NO,
                                                                                         LT(SYMB, KC_SPC), MT(MOD_LSFT, KC_BSPC), RGB_TOG,
     // right hand
     KC_NO,            KC_6,             KC_7,             KC_8,             KC_9,             KC_0,             KC_NO,
     KC_NO,            KC_Y,             KC_U,             KC_I,             KC_O,             KC_P,             KC_BSPC,
-                      KC_H,             KC_J,             KC_K,             KC_L,             NO_MINS,          KC_RCTRL,
-    TG(ARRO),         KC_N,    KC_M,             KC_COMM,          KC_DOT,           KC_UP,            KC_RSFT,
-                                        KC_RGUI,          KC_RALT,          KC_RIGHT,         KC_DOWN,          MO(ARRO),
-    KC_RALT, KC_TAB,
+                      KC_H,             KC_J,             KC_K,             KC_L,             NO_ASTR,          KC_RCTRL,
+    TG(ARRO),         KC_N,             KC_M,             KC_COMM,          KC_DOT,           NO_MINS,          KC_RSFT,
+                                        KC_RGUI,          KC_RALT,          KC_NO,            KC_NO,            MO(ARRO),
+    KC_NO, KC_RALT,
     KC_PGUP,
     KC_PGDN, KC_RSFT, LT(SYMB, KC_ENT)
 ),
@@ -131,11 +131,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * ,--------------------------------------------------.           ,--------------------------------------------------.
  * |        |      |      |      |      |      |      |           |      |      |      |      |      |      |        |
  * |--------+------+------+------+------+-------------|           |------+------+------+------+------+------+--------|
- * |        | QUIT | CLOSE|      |RELOAD| N TAB|      |           |      |      |      |  UP  |      |      |        |
+ * |        |      |      |      |      |      |      |           |      |      |      |  UP  |      |      |        |
  * |--------+------+------+------+------+------|      |           |      |------+------+------+------+------+--------|
- * |        |OPTION| SHIFT|      |      |      |------|           |------|      | LEFT | DOWN | RIGHT|      |        |
+ * |        | LALT | SHIFT|      |      |      |------|           |------|      | LEFT | DOWN | RIGHT|      |        |
  * |--------+------+------+------+------+------|      |           |  L2  |------+------+------+------+------+--------|
- * |        | UNDO | CUT  | COPY | PASTE|      |      |           | Lock |      |      |      |      |      |        |
+ * |        |      |      |      |      |      |      |           | Lock |      |      |      |      |      |        |
  * `--------+------+------+------+------+-------------'           `-------------+------+------+------+------+--------'
  *   |      |      |      |      |      |                                       |      |      |      |      |      |
  *   `----------------------------------'                                       `----------------------------------'
